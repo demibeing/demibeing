@@ -1,0 +1,121 @@
+import speech_recognition as sr
+import pyttsx3
+import pyaudio
+from datetime import date
+from googlesearch import search
+import webbrowser
+import time
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+import chromedriver_autoinstaller
+
+# Create speech recognition object
+r = sr.Recognizer()
+
+# Initialize text-to-speech engine
+engine = pyttsx3.init()
+
+
+
+# Define functions for responses
+def respond(audio_string):
+    print(audio_string)
+    engine.say(audio_string)
+    engine.runAndWait()
+
+def greet():
+    respond("Hello! how are you boss ")
+    while True:
+        todays_plan()
+
+def todays_plan():
+    with sr.Microphone() as source:
+        audio = r.listen(source)
+        user_input = r.recognize_google(audio)
+        if "i am fine" in user_input.lower() or "fine" in user_input.lower():
+            respond("good to hear")
+            respond("what are our plans today boss")
+            audio = r.listen(source)
+            user_input = r.recognize_google(audio)
+            if "enlighten me"in user_input.lower() or "brainstorm" in user_input.lower():
+                respond("working on it ")
+            breakpoint
+
+def introduce():
+    respond("My name is AI Bot.")
+
+def ask_how_are_you():
+    respond("I'm doing well, thank you!")
+
+def tell_time():
+    respond("It's currently " + datetime.datetime.now().strftime("%I:%M %p"))
+
+def check_weather():
+    respond("The weather is currently [insert current weather here].")
+
+def tell_joke():
+    respond("Why did the tomato turn red? Because it saw the salad dressing!")
+
+def say_goodbye():
+    respond("Goodbye!")
+
+def say_thanks():
+    respond("You're welcome!")
+
+# Define function for handling user input
+def handle_input():
+    respond("welcome boss")
+    respond("how may i help you today")
+    with sr.Microphone() as source:
+        print("Listening...")
+        audio = r.listen(source)
+
+        try:
+            user_input = r.recognize_google(audio)
+            print("User input:", user_input)
+
+            if "hello" in user_input.lower() or "hi" in user_input.lower():
+                greet()
+            elif "what's your name" in user_input.lower() or "who are you" in user_input.lower():
+                introduce()
+            elif "how are you" in user_input.lower() or "how about you" in user_input.lower():
+                ask_how_are_you()
+            elif "what time is it" in user_input.lower() or "what's the time" in user_input.lower():
+                tell_time()
+            elif "what's the weather like" in user_input.lower() or "what's the weather" in user_input.lower():
+                check_weather()
+            elif "tell me a joke" in user_input.lower() or "say something funny" in user_input.lower():
+                tell_joke()
+            elif "goodbye" in user_input.lower() or "bye" in user_input.lower():
+                say_goodbye()
+            elif "thank you" in user_input.lower() or "thanks" in user_input.lower():
+                say_thanks()
+            elif "open chrome" in user_input.lower() or "chrome" in user_input.lower():
+                
+             type_in_google(user_input)
+
+        except sr.UnknownValueError:
+            print("Could not understand audio")
+        except sr.RequestError as e:
+            print("Could not request results from Google Speech Recognition service; {0}".format(e))
+
+            
+            
+#open google code from this line
+def type_in_google(query):
+    chromedriver_autoinstaller.install()
+    driver = webdriver.Chrome()
+    
+    driver.get("https://www.google.com")
+    search_box = driver.find_element_by_name("q")
+    search_box.send_keys(query)
+    search_box.send_keys(Keys.RETURN)
+
+
+
+    
+    
+# 
+# Run program
+while True:
+    handle_input()
