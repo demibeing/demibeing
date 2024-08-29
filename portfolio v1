@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bobo's Portfolio</title>
+    <link rel="stylesheet" href="style.css"> <!-- custom styles -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #000000;
+            color: #333;
+        }
+
+        /* Navbar styles */
+        header {
+            background-color: transparent;
+            padding: 5px;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: none;
+        }
+
+        .navbar-brand {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            color: #8d2626;
+            text-transform: uppercase;
+            font-weight: 1000;
+            text-decoration: none;
+            letter-spacing: 3px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            border: none;
+        }
+
+        .nav-list {
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+            border: none;
+        }
+
+        .nav-item {
+            list-style: none;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 1rem;
+            padding: 10px 20px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #ffa500;
+        }
+
+        /* Intro section */
+        .intro {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .intro-content {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        /* Round Image */
+        .profile-img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #8d2626;
+        }
+
+        #follow-btn-1 {
+            background-color: #ff5733; /* New color */
+            color: #fff;
+            font-size: 20px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 10px 30px;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* 3D shadow effect */
+            transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition */
+        }
+
+        #follow-btn-1:hover {
+            transform: translateY(-3px); /* Lift the button on hover */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+        }
+
+        #follow-btn-1:active {
+            transform: translateY(2px); /* Pressed down effect */
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); /* Reduced shadow on active */
+        }
+
+        /* Intro Text */
+        .intro-text {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #d1c1c1;
+        }
+
+        /* Mobile styles */
+        @media (max-width: 768px) {
+            nav {
+                width: 100%;
+                position: fixed;
+                top: 0;
+                left: 0;
+                background-color: #000000; /* Same background color as desktop */
+                z-index: 1000;
+                padding: 10px 0;
+                border: none;
+            }
+
+            .nav-list {
+                flex-direction: row; /* Keep items in a row */
+                justify-content: space-between;
+                width: 20%;
+                padding: 0 20px;
+                height: auto;
+                display: flex; /* Ensure it stays flexed on mobile */
+            }
+
+            .nav-item {
+                margin: 0;
+            }
+
+            .nav-link {
+                padding: 10px;
+                text-align: center;
+                font-size: 1.1rem; /* Adjust font size for mobile */
+                font-weight: 700;
+            }
+
+            /* Center intro content in mobile view */
+            .intro-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .intro-text {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Navbar -->
+        <a class="navbar-brand" href="#">Bobo</a>
+        <nav>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/demibeing">GitHub</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.linkedin.com/in/aswandh-k-605154277?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Main Section -->
+    <section class="intro">
+        <div class="intro-content">
+            <img src="https://res.cloudinary.com/dqflngcmb/image/upload/v1724682681/new_fjds17.jpg" alt="Bobo" class="profile-img">
+            <a href="https://www.instagram.com/demi_being?utm_source=qr&igsh=MWxmMHl3eGt6ZDFqZA==">
+                <div class="follow-btn">
+                    <button id="follow-btn-1">Follow</button>
+                </div>
+            </a>
+            <h1 class="intro-text">I am Bobo</h1>
+            <h2>Mechanical Engineer at TKMCE</h2>
+        </div>
+    </section>     
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bobo's Portfolio</title>
+    <link rel="stylesheet" href="style.css"> <!-- custom styles -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #000000;
+            color: #333;
+        }
+
+        /* Navbar styles */
+        header {
+            background-color: transparent;
+            padding: 5px;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: none;
+        }
+
+        .navbar-brand {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            color: #8d2626;
+            text-transform: uppercase;
+            font-weight: 1000;
+            text-decoration: none;
+            letter-spacing: 3px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            border: none;
+        }
+
+        .nav-list {
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+            border: none;
+        }
+
+        .nav-item {
+            list-style: none;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 1rem;
+            padding: 10px 20px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #ffa500;
+        }
+
+        /* Intro section */
+        .intro {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .intro-content {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        /* Round Image */
+        .profile-img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #8d2626;
+        }
+
+        #follow-btn-1 {
+            background-color: #ff5733; /* New color */
+            color: #fff;
+            font-size: 20px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 10px 30px;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* 3D shadow effect */
+            transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition */
+        }
+
+        #follow-btn-1:hover {
+            transform: translateY(-3px); /* Lift the button on hover */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+        }
+
+        #follow-btn-1:active {
+            transform: translateY(2px); /* Pressed down effect */
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); /* Reduced shadow on active */
+        }
+
+        /* Intro Text */
+        .intro-text {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #d1c1c1;
+        }
+
+        /* Mobile styles */
+        @media (max-width: 768px) {
+            nav {
+                width: 100%;
+                position: fixed;
+                top: 0;
+                left: 0;
+                background-color: #000000; /* Same background color as desktop */
+                z-index: 1000;
+                padding: 10px 0;
+                border: none;
+            }
+
+            .nav-list {
+                flex-direction: row; /* Keep items in a row */
+                justify-content: space-between;
+                width: 20%;
+                padding: 0 20px;
+                height: auto;
+                display: flex; /* Ensure it stays flexed on mobile */
+            }
+
+            .nav-item {
+                margin: 0;
+            }
+
+            .nav-link {
+                padding: 10px;
+                text-align: center;
+                font-size: 1.1rem; /* Adjust font size for mobile */
+                font-weight: 700;
+            }
+
+            /* Center intro content in mobile view */
+            .intro-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .intro-text {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Navbar -->
+        <a class="navbar-brand" href="#">Bobo</a>
+        <nav>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/demibeing">GitHub</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.linkedin.com/in/aswandh-k-605154277?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Main Section -->
+    <section class="intro">
+        <div class="intro-content">
+            <img src="https://res.cloudinary.com/dqflngcmb/image/upload/v1724682681/new_fjds17.jpg" alt="Bobo" class="profile-img">
+            <a href="https://www.instagram.com/demi_being?utm_source=qr&igsh=MWxmMHl3eGt6ZDFqZA==">
+                <div class="follow-btn">
+                    <button id="follow-btn-1">Follow</button>
+                </div>
+            </a>
+            <h1 class="intro-text">I am Bobo</h1>
+            <h2>Mechanical Engineer at TKMCE</h2>
+        </div>
+    </section>     
+</body>
+</html>
