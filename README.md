@@ -1,5 +1,5 @@
- I’m @demibeing
-👀 I’m a Mechanical engineer/ digital Artist who likes to code 
+ hi there!
+👀 
  
 
 <!---
